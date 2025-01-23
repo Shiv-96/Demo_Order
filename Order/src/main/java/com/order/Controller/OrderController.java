@@ -42,6 +42,7 @@ public class OrderController {
         return new ResponseEntity<>(orderService.createNewOrder(orderItem, name, phone), HttpStatus.CREATED);
     }
 
+    @GetMapping("/orders/{id}")
     public ResponseEntity<Order> retrievOrdersbyIdHandler(@PathVariable("id") Long id) throws OrderException {
         return new ResponseEntity<>(orderService.retrievOrdersbyId(id), HttpStatus.OK);
     }
